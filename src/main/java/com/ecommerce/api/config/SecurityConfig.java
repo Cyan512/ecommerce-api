@@ -37,8 +37,7 @@ public class SecurityConfig {
                 .oauth2Login(oauth -> oauth
                         .successHandler(oauth2LoginSuccessHandler))
                 .logout(logout -> logout
-                        .logoutRequestMatcher(r -> "/logout".equals(r.getServletPath()))
-                        .logoutSuccessUrl("http://localhost:8080")
+                        .logoutSuccessUrl("/login")
                         .permitAll())
                 .csrf(csrf -> csrf.ignoringRequestMatchers("/api/**"));
 
